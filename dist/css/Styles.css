@@ -1,0 +1,645 @@
+html, body {
+	width: 100vw;
+	height: 100vh;
+	overflow: none;
+ 	font-family: 'Quicksand', sans-serif;
+ 	background-image: url('/images/SANSAC.png');
+    background-size: cover;
+}
+
+#map {	
+	width: 100vw;
+	overflow: none;
+	height: 100vh !important;	
+}
+
+.ol-zoom {
+	left: unset;
+	display: none;
+}
+
+#basePanel {
+	position: fixed;
+	bottom: 10;
+	z-index: 999;
+	width: 280px;
+	border: 2px solid #FFF;
+	max-height: 80px;
+	height: 80px;
+	right: 10;
+	border-radius: 0px;
+}
+
+#basePanel img {
+	padding: 0px !important;	
+	margin: 0px !important;
+  	width: 100%;
+  	height: 76px;
+  	max-height: 76px;
+}
+
+#basePanel img:hover {
+	opacity: 0.2;
+}
+
+.text {
+	background: #0a2642;
+	display: none;
+	font-weight: bold;
+}
+
+.flex-fill:hover .text {
+  	color: #FFF;
+  	background: #0a2642;
+  	padding: 10px;
+  	font-size: 10px;
+  	text-align: center;
+  	margin-top: -55px;
+	display: block;
+}
+
+#searchid {
+	position: fixed;
+	width: 400px;
+	top: 10px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	right: 10px;
+	background: linear-gradient(to bottom left, #fdbb2d, #22c1c3);
+	z-index: 999;
+	box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#searchid input:focus, #searchid input:visited {
+	border: none !important; 
+	border-width: 0 !important; 
+	box-shadow: none !important;	
+}
+
+.input-group {
+    display: flex;
+    background: #FFF;
+    align-items: center;
+    border-radius: 0px;
+}
+
+.input-group i {
+    margin: 10px;
+    color: #0a2642;
+}
+
+.input-group input {
+    flex: 1;
+    border: none;
+    outline: none;
+}
+
+.input-group-text {
+    color: #FFF;   
+    background: #0a2642;
+    font-weight: bold;
+    border: none !important;
+    outline: none !important;
+    border-radius: 0px;
+}
+
+.input-group-text:hover {
+	background-image: linear-gradient(to right, #ff0000, #0a2642);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: #990202;
+}
+
+@keyframes horizontalMove {
+	0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 100% 0%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
+}
+
+@keyframes changeTextColor {
+	0% {
+		color: #0a2642;
+	}
+	50% {
+		color: #FFF;
+	}
+	100% {
+		color: #0a2642;
+	}
+}
+
+#cont {
+	animation: changeTextColor 50s infinite;
+	animation-timing-function: ease;
+}
+
+#interest button:focus, #interest button:visited {
+	box-shadow: none !important;	
+}
+
+#interest input:focus, #interest input:visited {
+	border: none !important; 
+	border-width: 0 !important; 
+	box-shadow: none !important;	
+}
+
+.closed {
+    transform: translateX(-100%);
+}
+
+#errormsg {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#yes {
+	color: #FF0000;
+}
+
+#yes:hover {
+	color: #FFF;
+}
+
+#proceed {
+	color: #029902;
+}
+
+#proceed:hover {
+	color: #FFF;
+}
+
+.xsol {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.alert-sansa {
+	background: #0a2642;
+	color: #FFF;
+}
+
+.alert-first {
+	background: #007109;
+	color: #FFF;
+	border: 2px solid #FF0000;
+}
+
+.sr-2 {
+	margin-right: 5px;
+}
+
+#interest .flex-fill {
+	border-radius: 10px;
+	padding: 10px;
+}
+
+#interest .inters {
+	overflow: auto;
+	height: auto;	
+	padding: 10px;
+	max-height: 240px;
+}
+
+#interest .inters label {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: #581845;
+}
+
+#interest .bg-kids {
+	font-size: 12px;
+	color: #FF0000;
+}
+
+#nodataview, #lon, #lat {
+	display: none;
+}
+
+#toolbar {
+	position: fixed;
+	left: 10px;
+	top: 10px;
+	z-index: 9991;
+	background: transparent;
+	border-radius: 0px;
+	transition: transform 0.3s ease-in-out;
+	box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#toolbar .btn {
+	background: #0a2642;
+	color: #FFF;
+	border-radius: 0px;
+}
+
+#toolbar .btn:focus, #toolbar .btn:visited { 
+	box-shadow: none !important;	
+}
+
+#toolbar .btn:hover {
+	background: #FFF;
+	color: #0a2642;
+}
+
+#extent {
+	margin-top: 8px;
+}
+
+#zooms {
+	position: fixed;
+	right: 10;
+	top: 60;
+	background: #FFF;
+	color: #0a2642;
+	font-size: 14px;
+	width: 400px;
+	z-index: 9991;
+	transition: transform 0.3s ease-in-out;
+	box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.19);
+	display: none;
+}
+
+#zooms img {
+	height: 90px;
+	width: 100%;
+}
+
+#zooms p {
+	font-size: 11px;
+}
+
+#groups {
+	position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 999;
+	transition: transform 0.3s ease-in-out;
+	box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#groups .btn {
+	background: #0a2642;
+    color: #FFF;
+	border-radius: 0px;
+}
+
+#groups .btn:hover {
+	background: #FFF;
+    color: #0a2642;
+}
+
+#groups .btn.active {
+  background: #ff0000;
+  color: #FFF;
+}
+
+#groups .btn:focus, #groups .btn:visited {
+	box-shadow: none !important;
+}
+
+#wronganswer, #rightanswer {
+	padding: 60px;
+	display: none;
+}
+
+
+.sidebar {
+    height: 100vh;
+    width: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-image: url('https://www.geospatialworld.net/wp-content/uploads/2023/05/catagory_satellite_banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 20px;
+    box-shadow: 8px 0 8px 0 rgba(0, 0, 0, 0.2), 12px 0 20px 0 rgba(0, 0, 0, 0.19);
+    transition: width 0.3s;
+    animation: onMove 120s infinite;
+    display: none;
+}
+
+.sidebar.open {
+	width: 400px;
+	transition: width 0.5s ease;
+	display: block;
+}
+		
+@keyframes onMove {
+    0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 100% 0%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
+}
+
+
+.sidebar .arear {
+    color: #FFF;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #FFF;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background: rgba(0, 0, 0, 0.2);
+    color: #FF0000;
+    font-weight: bold;
+}
+
+.sidebar .input-group-text {
+	color: #FFF;
+    background: rgba(10, 38, 66, 0.3);	
+}
+
+.sidebar .input-group-text:last-child {
+    color: #0a2642;
+    background: rgba(255, 0, 0, 0.9);
+}
+
+.sidebar .input-group-text:last-child:hover {
+    color: #FF0000;
+    background: rgba(0, 255, 0, 0.3);
+}
+
+.sidebar .input-group-text:hover {
+	color: #0a2642;
+    background: rgba(255, 255, 255, 0.3)	
+}
+
+.sidebar .input-group-text:focus, .sidebar .input-group-text:visited, .sidebar .input-group input:focus, .sidebar .input-group input:visited  {
+	box-shadow: none !important;	
+}
+
+.accordion {
+	border-radius: 0px;
+}
+
+.accordion .accordion-button {
+	border-radius: 0px !important;
+    color: #FFF;
+    background: rgba(0, 255, 0, 0.3);
+}
+
+.accordion .accordion-item {
+    border-radius: 0px !important;
+    background: rgba(168, 255, 24, 0.3);
+    color: #FFF;
+}
+
+.accordion-button {
+    display: flex;
+    background: #FFF;
+    border-radius: 0px;
+    align-items: center;
+}
+
+.accordion-button:focus, .accordion-button:visited {
+	box-shadow: none !important;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+.accordion-button::before {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #000; 
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'><path fill='currentColor' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") center/contain no-repeat;
+}
+
+.accordion-button:not(.collapsed)::before {
+    transform: rotate(180deg);
+}
+
+.accordion-button:hover::before {
+    background-color: #FFF; 
+}
+
+.accordion-body {
+    height: auto;
+    max-height: 560px; /* Set maximum height for accordion body */
+    background: rgba(0, 0, 0, 0.6);
+    overflow-y: auto;
+}
+
+.accordion-body {
+    height: 100%;
+    border-radius: 0px;
+}
+
+.accordion #submit {
+	background: transparent;
+	color: #FFF;
+	border: 2px solid #FFF;
+}
+
+.accordion #submit:hover {
+	background: #FFF;
+	color: #000;
+}
+
+.accordion #submit:focus, .accordion #submit:visited {
+	box-shadow: none !important;
+}
+
+#cardview input {
+	font-size: 13px;
+	color: #900C3F;
+}
+
+#cardview input:focus, #cardview input:visited  {
+	box-shadow: none !important;
+}
+
+#loadingMessage {
+	position: fixed;
+	left: 40%;
+	top: 10px;
+	padding: 15px;
+	z-index: 9991;
+	background: rgb(10, 38, 66, 0.8);
+    color: #FFF;
+	border-radius: 10px;
+	transition: transform 0.3s ease-in-out;
+	box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.19);	
+	display: none;
+}
+
+#close-sidebar {
+	float: right;
+	margin-right: 20px;
+	color: #FFF;
+}
+
+#close-sidebar:hover {
+	color: #A8FF18;
+}
+
+#close-zooms {
+	float: right;
+	margin-right: 20px;
+	color: #0a2642;
+}
+
+#close-zooms:hover {
+	color: #A8FF18;
+}
+
+#continent, #clearPolygon {
+	display: none;
+}
+
+.bg-sansa {
+	background: #0a2642;
+    color: #FFF;
+}
+
+#close-interest, #close-zoom {
+	margin-right: 2px;
+	float: right;
+	color: #0a2642;
+}		
+
+#response {	
+	text-align: center;
+}
+
+.response {
+    width: 350px;
+	height: 300px;
+}
+
+.grad {
+    background-image: linear-gradient(to right, #ff0000, #FFFFFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+}
+
+.grad1 {
+    background-image: linear-gradient(to right, #F54FFF, #565876);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+}
+
+.groups {
+	width: 100%;
+	border-radius: 0px;
+	background: transparent;
+}
+
+.groups .btn {
+	color: #FFF;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.pad {
+	margin-right: 20px;
+	margin-left: 5px;
+}
+
+.geo {
+	border-left: 2px solid #FFF;
+	border-right: 2px solid #FFF;
+}
+
+.games {
+    border-radius: 0px;
+    font-size: 13px;
+	background: transparent;
+}
+
+.games input {
+    border-radius: 0px;
+    font-size: 13px;
+}
+
+.games span {
+    font-size: 13px;
+}
+
+.distance {
+    position: fixed;
+    bottom: 100px;
+    right: 10;
+    font-size: 12px;
+    background: green;
+    z-index: 999;
+    color: #FFF;
+    padding: 5px;
+    display: none;
+    box-shadow: 8px 0 8px 0 rgba(0, 0, 0, 0.2), 12px 0 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.score {
+    position: fixed;
+    bottom: 5px;
+    left: 405;
+    font-size: 12px;
+    background: green;
+    z-index: 999;
+    color: #FFF;
+    padding: 5px;
+    display: none;
+    box-shadow: 8px 0 8px 0 rgba(0, 0, 0, 0.2), 12px 0 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#pausegame, #resumegame, #stopgame, #show-sidebar {
+	display: none;
+}
+
+#gameContainer {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+}
+
+#satellite {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('https://www.freeiconspng.com/thumbs/satellite-png/satellite-png-2.png'); 
+    background-size: cover;
+    top: 175px;
+    left: 275px;
+}
+
+.obstacle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('https://w7.pngwing.com/pngs/493/907/png-transparent-gray-rock-asteroid-mining-asteroid-belt-asteroid-family-planetary-resources-asteroid-rock-outer-space-951-gaspra-thumbnail.png'); 
+    background-size: cover;
+}

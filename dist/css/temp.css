@@ -1,0 +1,70 @@
+#sidebar {
+	position: fixed;
+	top: 90;
+	right: 1 !important;
+    width: 35%;
+    background: transparent;
+    padding: 0px !important;
+    margin: 0px !important; 
+	z-index: 9999;
+	border-radius: 0px;
+	display: none;
+}
+
+#sidebar .card-header {
+	padding: 10px;
+    background: #0a2642;
+	border-radius: 0px;
+    color: #FFF;
+    font-weight: bold;
+}
+
+#sidebar .cards {
+	height: calc(100vh - 200px);
+	border-radius: 0px;
+    overflow: auto;
+   	background-color: rgba(255, 255, 255, 0.7);
+}
+
+#sidebar .card-footer {
+	padding: 0px;
+    background: #0a2642;
+	border-radius: 0px;
+    color: #FFF;
+    height: 60px;
+}
+
+#sidebar .card-footer .row {
+    padding: 15px;
+    width: 100%;
+}
+
+#sidebar .card-footer .input {
+    width: 100% !important;
+	border-radius: 0px;
+	border: 1px solid #FFF;
+	color: #FFF;
+	background: #0dcaf0;
+}
+
+#sidebar .card-footer input {        
+    width: 100% !important;
+	border-radius: 0px;
+	border: 1px solid #FFF;
+	color: #FFF;
+	background: #0dcaf0;
+}
+
+#sidebar .card-footer input:focus, #sidebar .card-footer input: visitedocus {
+    box-shadow: none !important;
+	
+	border: 1px solid #0dcaf0;
+	color: #0dcaf0;
+	background: #FFF;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
